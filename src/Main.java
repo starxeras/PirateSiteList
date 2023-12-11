@@ -29,13 +29,13 @@ public class Main {
             ArrayList<String> arr = new ArrayList<String>();
             for (PirateSite site : pirateSites) {
                 if (site.getParsedName().isBlank()) {
-                    arr.add(site.getUrl());
-                    arr.add(site.getParsedUrl());
+                    arr.add(site.getUrl().strip());
+                    arr.add(site.getParsedUrl().strip());
                     continue;
                 }
-                arr.add(site.getUrl());
-                arr.add(site.getParsedUrl());
-                arr.add(site.getParsedName());
+                arr.add(site.getUrl().strip());
+                arr.add(site.getParsedUrl().strip());
+                arr.add(site.getParsedName().strip());
             }
             w.write("[");
             for (int i = 0; i < arr.size(); i++) {
